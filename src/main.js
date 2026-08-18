@@ -19,3 +19,14 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 
 //摄像机的位置position
 camera.position.z = 5;
+
+//获取到canvas元素
+const canvas=document.querySelector('canvas.threejs');
+
+//创建渲染器
+const renderer=new THREE.WebGLRenderer({canvas:canvas});
+
+renderer.setSize(window.innerWidth, window.innerHeight);//设置渲染器大小
+
+//渲染场景
+renderer.render(scene, camera);
