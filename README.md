@@ -23,3 +23,6 @@ npm run dev
 | 2026-07-31 | `a32579a` feat: 创建场景并添加红色立方体网格 | 创建 Scene 场景，使用 BoxGeometry + MeshBasicMaterial 创建红色立方体网格并添加到场景中 |
 | 2026-07-31 | `1f15536` docs: 更新提交记录文档 | 根据 git log 更新 README.md 的提交记录表格 |
 | 2026-08-14 | `a822fe2` feat: 初始化摄像机并调整代码格式 | 初始化 PerspectiveCamera 透视摄像机并设置位置，调整 `src/main.js` 代码格式 |
+| 2026-08-14 | `f93b85e` docs: 更新提交记录文档 | 根据 git log 更新 README.md 的提交记录表格 |
+| 2026-08-18 | `f828401` feat: 创建渲染器并渲染场景 | 在 `index.html` 中添加 canvas 元素，使用 WebGLRenderer 创建渲染器并设置尺寸，渲染场景与摄像机 |
+| 2026-08-20 | `26559a5` feat: 远近裁剪面 | 将透视摄像机的 near 参数从 0.1 调整为 2，学习近裁剪面与远裁剪面对渲染的影响 |
