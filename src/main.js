@@ -14,11 +14,11 @@ const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
 // 将网格添加到场景中
 scene.add(cubeMesh);
 
-//初始化摄像机
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 30)//透视摄像机
+//初始化摄像机  参数：fov，aspect，near，far
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 2, 30)//透视摄像机
 
 //摄像机的位置position
-camera.position.z = 5;
+camera.position.z =5;
 
 //获取到canvas元素
 const canvas=document.querySelector('canvas.threejs');
