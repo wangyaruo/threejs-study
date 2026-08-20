@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
 // 创建场景
 const scene = new THREE.Scene();
@@ -20,11 +21,14 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 //摄像机的位置position
 camera.position.z =5;
 
-//获取到canvas元素
+//获取到canvas元素  canvas：画布
 const canvas=document.querySelector('canvas.threejs');
 
 //创建渲染器
 const renderer=new THREE.WebGLRenderer({canvas:canvas});
+
+//创建轨道控制器
+const controls =new OrbitControls(camera, canvas);
 
 renderer.setSize(window.innerWidth, window.innerHeight);//设置渲染器大小
 
