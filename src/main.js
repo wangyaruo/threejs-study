@@ -27,10 +27,21 @@ const canvas=document.querySelector('canvas.threejs');
 //创建渲染器
 const renderer=new THREE.WebGLRenderer({canvas:canvas});
 
-//创建轨道控制器
-const controls =new OrbitControls(camera, canvas);
-
 renderer.setSize(window.innerWidth, window.innerHeight);//设置渲染器大小
 
-//渲染场景
-renderer.render(scene, camera);
+//创建轨道控制器
+const controls =new OrbitControls(camera, canvas);
+controls.enableDamping = true; //启用阻尼效果
+controls.autoRotate = true; //自动旋转效果
+
+controls.update(); //
+
+//渲染循环
+const renderLoop=()=>{
+    controls.update(); //更新控制器
+    //渲染场景
+    renderer.render(scene, camera);
+   window.requestAnimationFrame(renderLoop);
+}
+
+renderLoop()
