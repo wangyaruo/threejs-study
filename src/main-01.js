@@ -16,8 +16,8 @@ const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
 scene.add(cubeMesh);
 
 //初始化摄像机  参数：fov，aspect，near，far
-//const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 2, 30)//透视摄像机
-const camera =new THREE.OrthographicCamera(-1,1,1,-1,0.1,200) //正交摄像机
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 2, 30)//透视摄像机
+
 //摄像机的位置position
 camera.position.z =5;
 
@@ -33,6 +33,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);//设置渲染器大小
 const controls =new OrbitControls(camera, canvas);
 controls.enableDamping = true; //启用阻尼效果
 controls.autoRotate = true; //自动旋转效果
+
+controls.update(); //
 
 //渲染循环
 const renderLoop=()=>{
